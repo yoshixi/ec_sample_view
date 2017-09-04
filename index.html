@@ -6,7 +6,8 @@
   <title>EC-sample</title>
   <!-- jQuery -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <!-- style sheet -->
   <link rel="stylesheet" href="common/css/reset.css">
   <link rel="stylesheet" href="common/css/common.css">
@@ -20,10 +21,9 @@
 
 </head>
 <body>
-<script type="text/javascript">writeHeader("./");</script>
-<div class="common_header">
+<div class="header">
   <div class="wrap">
-    <p class="imgbox"></p>
+    <p>EC-APP</p>
   </div>
 </div>
 
@@ -33,7 +33,37 @@
 </div>
 </div>
 
+<!-- モーダル・ダイアログ -->
+<div class="modal fade" id="showModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form class="put-form"  action="">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+          <div class="modal-image"></div>
+          <input type="hidden" name="id" id="product-id">
+          <input type="hidden" name="product[shop_id]" id="product-shop">
+          <label class="modal-title" for="product-name">Product name</label>
+          <input class="form-control" name="product[name]" id="product-name">
+        </div>
+        <div class="modal-body">
+          <label class="modal-title" for="product-price">Product price</label>
+          <input class="form-control" name="product[price]" id="product-price">
+          <label class="modal-title" for="product-price">Product price</label>
+          <input type="file" name="product[image]" id="product-image">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+          <input type="submit" name="commit" value="SAVE" disable_with="Save Now ..." data-disable-with="name" class="btn btn-primary"/>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
 <div id="footer"></div>
-<div id="modal-main">モーダルウィンドウ</div>
+
 </body>
 </html>
